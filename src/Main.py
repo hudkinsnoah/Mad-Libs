@@ -1,3 +1,5 @@
+from Play import Play
+from Create import Create
 
 def MenuOptions():
     print("1: Play a Mad-Lib!")
@@ -9,21 +11,30 @@ def MenuOptions():
 
 def start():
     WelcomeMessage()
-    GetSpace()
+    GetEnter()
     MainMenu()
 
 
-def GetSpace():
+def GetEnter():
     user_input = None
     while user_input is None:
         user_input = input()
 
 
 def MainMenu():
-    exit = False
-    while not exit:
-        MenuOptions()
-
+    finish = False
+    while not finish:
+        option = MenuOptions()
+        if option == "1":
+            play_game = Play()
+            play_game.start()
+        elif option == "2":
+            create_lib = Create()
+            create_lib.start()
+        elif option == "3":
+            finish = True
+        else:
+            print("Invalid option. Please Try Again")
 
 def WelcomeMessage():
     print("--------------------Welcome to Mad-Libs!--------------------\n")
