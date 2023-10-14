@@ -1,2 +1,2 @@
 # Mad-Libs
-CS450 Madlibs application in Python
+CS469 Madlibs application in Python
