@@ -1,0 +1,451 @@
+Anemone
+Ant
+Bee
+Beetle
+Butterfly
+Caterpillar
+Centipede
+Clam
+Cockroach
+Cocoon
+Coral
+Crab
+Cricket
+Cuttlefish
+Dragonfly
+Flea
+Fly
+Grasshopper
+Jellyfish
+Ladybug
+Lobster
+Louse
+Millipede
+Mosquito
+Moth
+Mussel
+Octopus
+Oyster
+Praying mantis
+Scorpion
+Sea urchin
+Slug
+Snail
+Spider
+Squid
+Starfish
+Wasp
+Worm
+adder
+African rock python
+alligator
+anaconda
+angonoka
+anole
+asp
+basilisk
+bearded dragon
+black caiman
+black racer
+blue-tongued skink
+boa constrictor
+box turtle
+bull snake
+caiman
+cobra
+collared lizard
+copperhead
+coral snake
+corn snake
+cottonmouth
+crocodile
+desert tortoise
+diamondback rattlesnake
+frilled lizard
+gaboon viper
+garter snake
+gavial
+gecko
+gila monster
+glass lizard
+gopher snake
+green iguana
+ground skink
+horned lizard
+iguana
+indigo snake
+king cobra
+kingsnake
+lizard
+loggerhead turtle
+mamba
+map turtle
+monitor lizard
+mountain viper
+mud snake
+mud turtle
+osage copperhead
+painted turtle
+pine snake
+pit viper
+python
+rat snake
+rattlesnake
+reptile
+ribbon snake
+sea turtle
+skink
+snake
+spiny lizard
+taipan
+timber rattler
+tortoise
+turtle
+viper
+water moccasin
+water turtle
+whipsnake
+African Wild Dog
+African Lion
+Arctic Hare
+Armadillo
+Asian Elephant
+Asian Lion
+Aye-Aye
+Baboon
+Bactrian Camel
+Beaver
+Beluga Whale
+Bengal Tiger
+Black Bear
+Black-Footed Ferret
+Black Rhinoceros
+Blue Whale
+Bobcat
+Bottlenose Dolphin
+Brown Bear
+California Sea Lion
+Caribou
+Cheetah
+Chimpanzee
+Chipmunk
+Clouded Leopard
+Cottontail Rabbit
+Cougar
+Coyote
+Dingo
+Dugong
+Eastern Gray Kangaroo
+African Elephant
+Asian Elephant
+Elephant Seal
+Fennec Fox
+Fossa
+Fox
+Fur Seal
+Gelada
+Giant Anteater
+Giant Panda
+Giant River Otter
+Gibbon
+Giraffe
+Golden Lion Tamarin
+Gray Whale
+Grizzly Bear
+Groundhog
+Harbor Porpoise
+Hare
+Arctic Hare
+Harp Seal
+Hawaiian Monk Seal
+Hedgehog
+Hippopotamus
+Horse
+Howler Monkey
+Humpback Whale
+Impala
+Indian Rhinoceros
+Killer Whale
+Orca
+Kinkajou
+Koala
+Leopard
+Leopard Seal
+Lion, African
+Little Red Flying Fox
+Llama
+Lynx
+Manatee
+Mandrill
+Meerkat
+Mongoose
+Mountain Goat
+Mountain Gorilla
+Mountain Lion
+Mouse Lemur
+Musk-Ox
+Mole Rat
+Narwhal
+Nutria
+Ocelot
+Opossum
+Orangutan
+Orca Killer Whale
+Platypus
+Polar Bear
+Porcupine
+Prairie Dog
+Proboscis Monkey
+Raccoon
+Red Fox
+Red Kangaroo
+Red Leaf Monkey
+Red Panda
+Red Uakari
+Rhesus Monkey
+Right Whale
+Sea Otter
+Siberian Tiger
+Sifaka
+Skunk
+Sloth Bear
+Snow Leopard
+Snowshoe Hare
+Spectacled Bear
+Sperm Whale
+Spider Monkey
+Spotted Hyena
+Squirrel
+Steller Sea Lion
+Sumatran Rhinoceros
+Sumatran Tiger
+Sun Bear
+Tapir
+Tasmanian Devil
+Thomson’s Gazelle
+Three-Toed Sloth
+Two-Toed Sloth
+Wallaby
+Walrus
+Warthog
+Water Buffalo
+Weddell Seal
+Western Lowland Gorilla
+White Rhinoceros
+Whale, Blue
+Whale, Humpback
+White-Eared Kob
+White-Tailed Deer
+Wildebeest
+Wolf
+Wolverine
+Zebra
+dog
+goat
+cat
+pig
+sheep
+cattle
+zebu
+chicken
+donkey
+duck
+rooster
+rabbit
+horse
+silkmoth
+pigeon
+yak
+goose
+camel
+lama
+alpaca
+ferret
+dove
+turkey
+goldfish
+canary
+mouse
+mink
+bee
+hen
+ox
+cow
+calf
+foal
+kid
+chick
+lamb
+Crab
+Fish
+Seal
+Octopus
+Shark
+Starfish
+Whale
+Penguin
+Jellyfish
+Squid
+Lobster
+Pelican
+Seahorse
+Walrus
+Shrimp
+Oyster
+Clams
+Seagull
+Dolphin
+Shells
+Sea urchin
+Cormorant
+Otter
+Pelican
+Sea anemone
+Sea turtle
+Sea lion
+Coral
+Water Turtle
+Crocodile
+Killer Whale
+Sea Lion
+Sea Anemone
+Angelfish
+Blue Whale
+Piranha
+Platypus
+Tuna
+Eal
+Salmon
+Shark
+Zebra
+Gorilla
+Walrus
+Leopard
+Wolf
+Antelope
+Hippo
+Vulture
+Ostrich
+Mouse
+Snail
+Boar
+Penguin
+Cheetah
+Rhinoceros
+Beaver
+Jaguar
+Yak
+Wombat
+Hyena
+Monkey
+Panda
+Bald eagle
+Jellyfish
+Crab
+Giraffe
+Woodpecker
+Camel
+Starfish
+Koala
+Alligator
+Owl
+Tiger
+Bear
+Bull
+Whale
+Pig
+Parrot
+Bird
+Lynx
+Hamster
+Horse
+Bison
+Possum
+Porcupine
+Blue whale
+Coyote
+Chimpanzee
+Raccoon
+Lion
+Arctic wolf
+Crocodile
+Dolphin
+Elephant
+Squirrel
+Snake
+Kangaroo
+Hippopotamus
+Elk
+Rabbit
+Fox
+Gorilla
+Bat
+Hare
+Toad
+Frog
+Deer
+Rat
+Badger
+Lizard
+Mole
+Hedgehog
+Otter
+Reindeer
+Eagle
+Amphibians Animals Names
+newt
+tongueless frog
+climbing salamander
+treefrog
+toad
+tailed frog
+warty newt
+spotted newt
+ensatina
+frog
+disc-tongued frog
+crested newt
+giant salamander
+barking frog
+fork-tongued frog
+gerrothorax
+true frog
+mud salamander
+mantella frog
+torrent salamander
+red-eyed tree frog
+fire salamander
+sedge frog
+tadpole
+brook salamander
+ghost frog
+hellbender
+paddle-tail newt
+leopard frog
+western toad
+red salamander
+fire-belly newt
+shovelnose frog
+common frog
+knobby newt
+moss frog
+gold frog
+knot of toads
+wood frog
+narrow-mouthed frog
+black toad
+dusky salamander
+amphiuma
+litter frog
+ground frog
+clawed frog
+natterjack
+eastern newt
+mexican treefrog
+glass frog
+caecilian
+waterdog
+salamander
+goliath frog
+poison dart frog
+spadefoot

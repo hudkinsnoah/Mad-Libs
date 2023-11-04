@@ -2,6 +2,9 @@ import os
 import random
 
 
+WORD_FILES = {"verbs": "verbs.txt", "adjectives": "adjectives.txt",
+              "nouns": "nouns.txt", "bodyparts": "bodyparts.txt",
+              "animals": "animals.txt", "clothes": "clothes.txt"}
 class Play:
     def __init__(self):
         self.MasterListName = os.path.abspath(os.path.join(os.getcwd(), "..", "MadLibs", "MasterList.txt"))
@@ -9,8 +12,15 @@ class Play:
         self.MadLib = ""
         self.PromptsList = []
         self.MadLibName = None
+        self.verbs = dict()
+        self.adjectives = dict()
+        self.nouns = dict()
+        self.bodyparts = dict()
+        self.animals = dict()
+        self.clothes = dict()
 
     def start(self):
+        self.ReadWords()
         self.GetMadLib()
         self.ParseMadLib()
         self.PromptInput()
@@ -52,8 +62,48 @@ class Play:
     def PromptInput(self):
         for prompt in range(0, len(self.PromptsList)):
             print(f"Enter a(n): {self.MadLib[self.PromptsList[prompt][0] + 1:self.PromptsList[prompt][1]]}")
-            user_input = input()
+            user_input = self.CheckForInput(self.MadLib[self.PromptsList[prompt][0] + 1:self.PromptsList[prompt][1]])
             self.PromptsList[prompt].append(user_input)
+
+    def CheckForInput(self, type):
+        valid_input = False
+        while not valid_input:
+            user_input = input()
+            if type == "adjective":
+                if user_input.strip().lower() not in self.adjectives:
+                    print("Does not appear to be a valid adjective. Please try again")
+                    continue
+            elif type == "animal" or type == "type of bug":
+                if user_input.strip().lower() not in self.animals:
+                    print("Does not appear to be a valid adjective. Please try again")
+                    continue
+            elif type == "part of the body" or type == "body part":
+                if user_input.strip().lower() not in self.bodyparts:
+                    print("Does not appear to be a valid part of the body. Please try again")
+                    continue
+            elif type == "clothing item":
+                if user_input.strip().lower() not in self.clothes:
+                    print("Does not appear to be a valid clothing item. Please try again")
+                    continue
+            elif type == "noun":
+                if user_input.strip().lower() not in self.nouns:
+                    print("Does not appear to be a valid noun. Please try again")
+                    continue
+            elif type == "verb":
+                if user_input.strip().lower() not in self.verbs:
+                    print("Does not appear to be a valid verb. Please try again")
+                    continue
+            elif "ending in \"ing\"" in type:
+                if not user_input.lower().endswith("ing"):
+                    print("Does not end with 'ing'. Please try again")
+                    continue
+            elif type == "number":
+                if not user_input.isnumeric():
+                    print("Does not appear to be a valid number. Please try again")
+                    continue
+            valid_input = True
+
+        return user_input
 
     def ParseTogether(self):
         for prompt in self.PromptsList:
@@ -72,3 +122,39 @@ class Play:
                 print(self.MadLib[count:count + 60])
                 count += 60
                 madLibRemaining -= 60
+
+    def ReadWords(self):
+        animals_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['animals']}")), 'r')
+        Lines = animals_file.readlines()
+        for line in Lines:
+            self.animals[line.strip().lower()] = line.strip().lower()
+
+        adjectives_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['adjectives']}")),
+                               'r')
+        Lines = adjectives_file.readlines()
+        for line in Lines:
+            self.adjectives[line.strip().lower()] = line.strip().lower()
+
+        bodyparts_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['bodyparts']}")),
+                               'r')
+        Lines = bodyparts_file.readlines()
+        for line in Lines:
+            self.bodyparts[line.strip().lower()] = line.strip().lower()
+
+        clothes_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['clothes']}")),
+                               'r')
+        Lines = clothes_file.readlines()
+        for line in Lines:
+            self.clothes[line.strip().lower()] = line.strip().lower()
+
+        nouns_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['nouns']}")),
+                               'r')
+        Lines = nouns_file.readlines()
+        for line in Lines:
+            self.nouns[line.strip().lower()] = line.strip().lower()
+
+        verbs_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['verbs']}")),
+                               'r')
+        Lines = verbs_file.readlines()
+        for line in Lines:
+            self.verbs[line.strip().lower()] = line.strip().lower()
