@@ -1,0 +1,42 @@
+Foyer
+Entrance Hall
+Kitchen
+Family Room
+Dining Room
+Living Room
+Master Bedroom
+Bathroom
+Laundry Room
+Guest Room
+Home Office
+Library
+Bedroom
+Playroom
+Theatre
+Gym
+Basement
+Garage
+Closet
+Pantry
+Game Room
+Attic
+Sunroom
+Conservatories
+Storage
+Music Room
+Cellar
+Wine Cellar
+Loft
+Spare Room
+Balcony
+Nursery
+Study
+Utility Room
+Mud Room
+Hallway
+Corridor
+wardrobe
+shed
+porch
+library
+Greenhouse

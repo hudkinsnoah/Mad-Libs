@@ -4,7 +4,8 @@ import random
 
 WORD_FILES = {"verbs": "verbs.txt", "adjectives": "adjectives.txt",
               "nouns": "nouns.txt", "bodyparts": "bodyparts.txt",
-              "animals": "animals.txt", "clothes": "clothes.txt"}
+              "animals": "animals.txt", "clothes": "clothes.txt",
+              "rooms": "rooms.txt"}
 class Play:
     def __init__(self):
         self.MasterListName = os.path.abspath(os.path.join(os.getcwd(), "..", "MadLibs", "MasterList.txt"))
@@ -18,6 +19,7 @@ class Play:
         self.bodyparts = dict()
         self.animals = dict()
         self.clothes = dict()
+        self.rooms = dict()
 
     def start(self):
         self.ReadWords()
@@ -75,7 +77,7 @@ class Play:
                     continue
             elif given_type == "animal" or given_type == "type of bug":
                 if user_input.strip().lower() not in self.animals:
-                    print("Does not appear to be a valid adjective. Please try again")
+                    print("Does not appear to be a valid animal. Please try again")
                     continue
             elif given_type == "part of the body" or given_type == "body part":
                 if user_input.strip().lower() not in self.bodyparts:
@@ -100,6 +102,10 @@ class Play:
             elif given_type == "number":
                 if not user_input.isnumeric():
                     print("Does not appear to be a valid number. Please try again")
+                    continue
+            elif given_type == "room in a house":
+                if not user_input.lower() not in self.rooms:
+                    print("Does not appear to be a valid room. Please try again")
                     continue
             valid_input = True
 
@@ -158,3 +164,8 @@ class Play:
         Lines = verbs_file.readlines()
         for line in Lines:
             self.verbs[line.strip().lower()] = line.strip().lower()
+
+        rooms_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "rooms", f"{WORD_FILES['rooms']}")), 'r')
+        Lines = rooms_file.readlines()
+        for line in Lines:
+            self.rooms[line.strip().lower()] = line.strip().lower()
