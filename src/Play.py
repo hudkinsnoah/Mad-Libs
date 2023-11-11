@@ -79,7 +79,7 @@ class Play:
                 if user_input.strip().lower() not in self.animals:
                     print("Does not appear to be a valid animal. Please try again")
                     continue
-            elif given_type == "part of the body" or given_type == "body part":
+            elif "part of the body" in given_type or given_type == "body part":
                 if user_input.strip().lower() not in self.bodyparts:
                     print("Does not appear to be a valid part of the body. Please try again")
                     continue
