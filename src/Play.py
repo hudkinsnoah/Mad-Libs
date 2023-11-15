@@ -103,8 +103,8 @@ class Play:
                 if not user_input.isnumeric():
                     print("Does not appear to be a valid number. Please try again")
                     continue
-            elif given_type == "room in a house":
-                if not user_input.lower() not in self.rooms:
+            elif given_type == "room in a house" or given_type == "room of the house":
+                if user_input.lower() not in self.rooms:
                     print("Does not appear to be a valid room. Please try again")
                     continue
             valid_input = True
@@ -165,7 +165,7 @@ class Play:
         for line in Lines:
             self.verbs[line.strip().lower()] = line.strip().lower()
 
-        rooms_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "rooms", f"{WORD_FILES['rooms']}")), 'r')
+        rooms_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['rooms']}")), 'r')
         Lines = rooms_file.readlines()
         for line in Lines:
             self.rooms[line.strip().lower()] = line.strip().lower()
