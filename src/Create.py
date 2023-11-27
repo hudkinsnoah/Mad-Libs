@@ -1,5 +1,6 @@
 from pynput import keyboard
 import os
+from Play import Play
 
 class Create:
     def __init__(self):
@@ -22,6 +23,7 @@ class Create:
         self.get_title()
         self.start_keyboard_listener()
         self.get_mad_lib_input()
+        self.ask_play_made()
 
     def on_release(self, key):
         if key == keyboard.Key.esc:
@@ -60,15 +62,17 @@ class Create:
         return True
 
     def save_madlib(self):
-        self.title = self.title.replace(' ', '')
-        try:
-            new_madlib_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "MadLibs", f"{self.title}.txt")), 'x')
-            new_madlib_file.write(self.mad_lib)
-            new_madlib_file.close()
-        except IOError:
-            print("Error: Madlib name is already taken. Please enter a new Title")
-            return
-            #TODO: Add ability to enter a new title
+        title_valid = False
+        while not title_valid:
+            self.title = self.title.replace(' ', '')
+            try:
+                new_madlib_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "MadLibs", f"{self.title}.txt")), 'x')
+                new_madlib_file.write(self.mad_lib)
+                new_madlib_file.close()
+                title_valid = True
+            except IOError:
+                print("Error: Madlib name is already taken. Please enter a new Title")
+                self.title = input()
 
         file = open(self.MasterListName, 'a')
         file.write(f"\n{self.title}")
@@ -86,3 +90,10 @@ class Create:
         self.listener = keyboard.Listener(
             on_release=self.on_release)
         self.listener.start()
+
+    def ask_play_made(self):
+        print("Would you like to play the Mad Lib that was just created?")
+        answer = input().lower()
+        if answer in ["y", "yes", "yep"]:
+            play = Play()
+            play.start_specific(self.title)

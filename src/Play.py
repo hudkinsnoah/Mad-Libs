@@ -29,16 +29,35 @@ class Play:
         self.ParseTogether()
         self.PrintMadLib()
 
+    def start_specific(self, name):
+        self.ReadWords()
+        self.GetSpecificMadLib(name)
+        self.ParseMadLib()
+        self.PromptInput()
+        self.ParseTogether()
+        self.PrintMadLib()
+
     def GetMadLib(self):
         self.OpenMasterList()
         MadlibIndex = random.randint(0, len(self.MasterList) - 1)
         self.MadLibName = self.MasterList[MadlibIndex].strip()
         self.GetChosenMadLib(self.MadLibName)
 
+    def GetSpecificMadLib(self, name):
+        try:
+            file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "MadLibs", f"{name}.txt")), 'r')
+            self.MadLib = file.readlines()
+            self.MadLib = self.MadLib[0]
+            file.close()
+        except OSError as error:
+            print(error)
+            exit(1)
+
     def OpenMasterList(self):
         try:
             file = open(self.MasterListName, 'r')
             self.MasterList = file.readlines()
+            file.close()
         except OSError as error:
             print(error)
             exit(1)
@@ -47,6 +66,7 @@ class Play:
         file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "MadLibs", f"{MadLibName}.txt")), "r")
         self.MadLib = file.readlines()
         self.MadLib = self.MadLib[0]
+        file.close()
 
     def ParseMadLib(self):
         star_list = []
@@ -134,38 +154,45 @@ class Play:
         Lines = animals_file.readlines()
         for line in Lines:
             self.animals[line.strip().lower()] = line.strip().lower()
+        animals_file.close()
 
         adjectives_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['adjectives']}")),
                                'r')
         Lines = adjectives_file.readlines()
         for line in Lines:
             self.adjectives[line.strip().lower()] = line.strip().lower()
+        adjectives_file.close()
 
         bodyparts_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['bodyparts']}")),
                                'r')
         Lines = bodyparts_file.readlines()
         for line in Lines:
             self.bodyparts[line.strip().lower()] = line.strip().lower()
+        bodyparts_file.close()
 
         clothes_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['clothes']}")),
                                'r')
         Lines = clothes_file.readlines()
         for line in Lines:
             self.clothes[line.strip().lower()] = line.strip().lower()
+        clothes_file.close()
 
         nouns_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['nouns']}")),
                                'r')
         Lines = nouns_file.readlines()
         for line in Lines:
             self.nouns[line.strip().lower()] = line.strip().lower()
+        nouns_file.close()
 
         verbs_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['verbs']}")),
                                'r')
         Lines = verbs_file.readlines()
         for line in Lines:
             self.verbs[line.strip().lower()] = line.strip().lower()
+        verbs_file.close()
 
         rooms_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['rooms']}")), 'r')
         Lines = rooms_file.readlines()
         for line in Lines:
             self.rooms[line.strip().lower()] = line.strip().lower()
+        rooms_file.close()
