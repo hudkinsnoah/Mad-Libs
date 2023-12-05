@@ -18,7 +18,8 @@ class Create:
         print("User for input, place your prompt between")
         print("two asterisks(*). For example: *verb* and")
         print("continue one with your story!  To finish,")
-        print("press the Escape key,  then the Enter key")
+        print("press the Enter key, the Escape key, and ")
+        print("        then the Enter key again.        ")
         print("             Happy Libbing!              ")
         self.get_title()
         self.start_keyboard_listener()
@@ -92,7 +93,8 @@ class Create:
         self.listener.start()
 
     def ask_play_made(self):
-        print("Would you like to play the Mad Lib that was just created?")
+        os.system('cls')
+        print("Would you like to play the Mad Lib that was just created? (Y/N)")
         answer = input().lower()
         if answer in ["y", "yes", "yep"]:
             play = Play()

@@ -30,6 +30,7 @@ class Play:
         self.PrintMadLib()
 
     def start_specific(self, name):
+        os.system('cls')
         self.ReadWords()
         self.GetSpecificMadLib(name)
         self.ParseMadLib()
@@ -99,7 +100,7 @@ class Play:
                 if user_input.strip().lower() not in self.animals:
                     print("Does not appear to be a valid animal. Please try again")
                     continue
-            elif "part of the body" in given_type or given_type == "body part":
+            elif "part of the body" in given_type or given_type == "body part" and "plural" not in given_type:
                 if user_input.strip().lower() not in self.bodyparts:
                     print("Does not appear to be a valid part of the body. Please try again")
                     continue
@@ -136,18 +137,21 @@ class Play:
             self.MadLib = self.MadLib.replace(prompt[2], prompt[3], 1)
 
     def PrintMadLib(self):
+        os.system('cls')
         print("Here is the Final Result!")
         count = 0
         madLibRemaining = len(self.MadLib)
         while count < len(self.MadLib):
-            if madLibRemaining < 60:
+            if madLibRemaining < 80:
                 print(self.MadLib[count:])
                 count += madLibRemaining
                 madLibRemaining = 0
             else:
-                print(self.MadLib[count:count + 60])
-                count += 60
-                madLibRemaining -= 60
+                print(self.MadLib[count:count + 80])
+                count += 80
+                madLibRemaining -= 80
+        # Get a blank line in the output this way
+        print()
 
     def ReadWords(self):
         animals_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "words", f"{WORD_FILES['animals']}")), 'r')
