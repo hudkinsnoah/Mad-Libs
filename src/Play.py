@@ -1,11 +1,13 @@
 import os
 import random
+from Fonts import bcolors
 
 
 WORD_FILES = {"verbs": "verbs.txt", "adjectives": "adjectives.txt",
               "nouns": "nouns.txt", "bodyparts": "bodyparts.txt",
               "animals": "animals.txt", "clothes": "clothes.txt",
               "rooms": "rooms.txt"}
+
 class Play:
     def __init__(self):
         self.MasterListName = os.path.abspath(os.path.join(os.getcwd(), "..", "MadLibs", "MasterList.txt"))
@@ -76,7 +78,8 @@ class Play:
                 star_list.append(index)
 
         if len(star_list) % 2 != 0:
-            print(f"Uneven number of *. Please check the MadLib named {self.MadLibName}")
+            print(f"{bcolors.FAIL}Uneven number of *. Please check the MadLib named {self.MadLibName}")
+            print(f"{bcolors.WHITE}")
 
         for prompt in range(0, len(star_list), 2):
             self.PromptsList.append([star_list[prompt], star_list[prompt + 1],
@@ -94,39 +97,48 @@ class Play:
             user_input = input()
             if given_type == "adjective":
                 if user_input.strip().lower() not in self.adjectives:
-                    print("Does not appear to be a valid adjective. Please try again")
+                    print(f"{bcolors.WARNING}Does not appear to be a valid adjective. Please try again")
+                    print(f"{bcolors.WHITE}")
                     continue
             elif given_type == "animal" or given_type == "type of bug":
                 if user_input.strip().lower() not in self.animals:
-                    print("Does not appear to be a valid animal. Please try again")
+                    print(f"{bcolors.WARNING}Does not appear to be a valid animal. Please try again")
+                    print(f"{bcolors.WHITE}")
                     continue
             elif "part of the body" in given_type or given_type == "body part" and "plural" not in given_type:
                 if user_input.strip().lower() not in self.bodyparts:
-                    print("Does not appear to be a valid part of the body. Please try again")
+                    print(f"{bcolors.WARNING}Does not appear to be a valid part of the body. Please try again")
+                    print(f"{bcolors.WHITE}")
                     continue
             elif given_type == "clothing item":
                 if user_input.strip().lower() not in self.clothes:
-                    print("Does not appear to be a valid clothing item. Please try again")
+                    print(f"{bcolors.WARNING}Does not appear to be a valid clothing item. Please try again")
+                    print(f"{bcolors.WHITE}")
                     continue
             elif given_type == "noun":
                 if user_input.strip().lower() not in self.nouns:
-                    print("Does not appear to be a valid noun. Please try again")
+                    print(f"{bcolors.WARNING}Does not appear to be a valid noun. Please try again")
+                    print(f"{bcolors.WHITE}")
                     continue
             elif given_type == "verb":
                 if user_input.strip().lower() not in self.verbs:
-                    print("Does not appear to be a valid verb. Please try again")
+                    print(f"{bcolors.WARNING}Does not appear to be a valid verb. Please try again")
+                    print(f"{bcolors.WHITE}")
                     continue
             elif "ending in \"ing\"" in given_type:
                 if not user_input.lower().endswith("ing"):
-                    print("Does not end with 'ing'. Please try again")
+                    print(f"{bcolors.WARNING}Does not end with 'ing'. Please try again")
+                    print(f"{bcolors.WHITE}")
                     continue
             elif given_type == "number":
                 if not user_input.isnumeric():
-                    print("Does not appear to be a valid number. Please try again")
+                    print(f"{bcolors.WARNING}Does not appear to be a valid number. Please try again")
+                    print(f"{bcolors.WHITE}")
                     continue
             elif given_type == "room in a house" or given_type == "room of the house":
                 if user_input.lower() not in self.rooms:
-                    print("Does not appear to be a valid room. Please try again")
+                    print(f"{bcolors.WARNING}Does not appear to be a valid room. Please try again")
+                    print(f"{bcolors.WHITE}")
                     continue
             valid_input = True
 

@@ -1,6 +1,7 @@
 from pynput import keyboard
 import os
 from Play import Play
+from Fonts import bcolors
 
 class Create:
     def __init__(self):
@@ -23,8 +24,9 @@ class Create:
         print("             Happy Libbing!              ")
         self.get_title()
         self.start_keyboard_listener()
-        self.get_mad_lib_input()
-        self.ask_play_made()
+        should_continue = self.get_mad_lib_input()
+        if should_continue:
+            self.ask_play_made()
 
     def on_release(self, key):
         if key == keyboard.Key.esc:
@@ -49,6 +51,8 @@ class Create:
         check_successful = self.check_input()
         if check_successful:
             self.save_madlib()
+            return True
+        return False
 
     def check_input(self):
         asterisk_count = 0
@@ -57,7 +61,8 @@ class Create:
                 asterisk_count += 1
 
         if asterisk_count % 2 != 0:
-            print("Error: There was an uneven number of asterisks given in the input")
+            print(f"{bcolors.FAIL}Error: There was an uneven number of asterisks given in the input")
+            print(f"{bcolors.WHITE}")
             return False
 
         return True
@@ -66,13 +71,19 @@ class Create:
         title_valid = False
         while not title_valid:
             self.title = self.title.replace(' ', '')
+            if self.title == "":
+                print(f"{bcolors.FAIL}Error: Madlib name is invalid. Please enter a new Title")
+                print(f"{bcolors.WHITE}")
+                self.title = input()
+                continue
             try:
                 new_madlib_file = open(os.path.abspath(os.path.join(os.getcwd(), "..", "MadLibs", f"{self.title}.txt")), 'x')
                 new_madlib_file.write(self.mad_lib)
                 new_madlib_file.close()
                 title_valid = True
             except IOError:
-                print("Error: Madlib name is already taken. Please enter a new Title")
+                print(f"{bcolors.FAIL}Error: Madlib name is already taken. Please enter a new Title")
+                print(f"{bcolors.WHITE}")
                 self.title = input()
 
         file = open(self.MasterListName, 'a')
@@ -81,7 +92,8 @@ class Create:
 
     @staticmethod
     def confirm_done():
-        print("Are you sure that you are done inputting your mad lib? (Y/N)")
+        print(f"{bcolors.WARNING}Are you sure that you are done inputting your mad lib? (Y/N)")
+        print(f"{bcolors.WHITE}")
         done = input().lower()
         if done in ["y", "yes", "yep"]:
             return True

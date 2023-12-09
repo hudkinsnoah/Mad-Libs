@@ -2,6 +2,8 @@ from Play import Play
 from Create import Create
 import os
 
+from Fonts import bcolors
+
 def MenuOptions():
     print("1: Play a Mad-Lib!")
     print("2: Create a Mad-Lib!")
@@ -38,7 +40,8 @@ def MainMenu():
         elif option == "3":
             finish = True
         else:
-            print("Invalid option. Please Try Again")
+            print(f"{bcolors.FAIL}Invalid option. Please Try Again")
+            print(f"{bcolors.WHITE}")
 
 def WelcomeMessage():
     os.system('cls')
